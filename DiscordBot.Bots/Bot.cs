@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus.Interactivity;
 using System;
+using DiscordBot.Bots.Commands;
 
 namespace DiscordBot
 {
@@ -67,7 +68,8 @@ namespace DiscordBot
             Commands.RegisterCommands<SimpleCommands>();
             Commands.RegisterCommands<RolesCommands>();
             Commands.RegisterCommands<ItemCommands>();
-            Commands.RegisterCommands<ProfileCommands>();
+            Commands.RegisterCommands<ProfileCommands>(); 
+            Commands.RegisterCommands<AdminCommands>();
 
             Client.ConnectAsync();
         }

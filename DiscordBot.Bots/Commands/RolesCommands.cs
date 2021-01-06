@@ -9,11 +9,9 @@ namespace DiscordBot
 {
     public class RolesCommands : BaseCommandModule
     {
-        /*private readonly RPGContext _context*/
 
         public RolesCommands(RPGContext context)
         {
-            //_context = context;
         }
 
         [Command("join")]
