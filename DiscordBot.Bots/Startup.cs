@@ -1,10 +1,12 @@
 ﻿using DiscordBot.Core.Services.Items;
+using DiscordBot.Core.Services.Parser;
 using DiscordBot.Core.Services.Profiles;
 using DiscordBot.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace DiscordBot.Bots
 {
@@ -23,11 +25,14 @@ namespace DiscordBot.Bots
             services.AddScoped<IItemService, ItemService>();
             services.AddScoped<IExperienceService, ExperienceService>();
             services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IParserService, ParserService>();
 
             var serviceProvider = services.BuildServiceProvider();
 
             var bot = new Bot(serviceProvider);
             services.AddSingleton(bot);
+
+            var servs = services.ToList();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

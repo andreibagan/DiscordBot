@@ -70,6 +70,7 @@ namespace DiscordBot
             Commands.RegisterCommands<ItemCommands>();
             Commands.RegisterCommands<ProfileCommands>(); 
             Commands.RegisterCommands<AdminCommands>();
+            Commands.RegisterCommands<ParserCommands>();
 
             Client.ConnectAsync();
         }
